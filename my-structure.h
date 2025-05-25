@@ -4,5 +4,5 @@
 
 typedef struct Node {
     int x;
-    struct Node *next;
+    struct Node* next;
 } Node;
