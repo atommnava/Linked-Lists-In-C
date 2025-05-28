@@ -28,6 +28,13 @@ void deallocate(Node **root)
         curr = curr -> next;
         free(aux);
     }
+    /* RECURSIVE MANNER
+    void recursiveDeallocate(Node **node) {
+        if (*node == NULL) return;
+        deallocate(*(&node) -> next);
+        free(*node);
+        *node = NULL;
+    */
     *root = NULL;
     printf("DEALLOCATION SUCCESSFULLY..!");
 }
@@ -46,6 +53,6 @@ int main(void)
         printf("%d\n", curr->x);
     }
     deallocate(&root);
-
+    
     return 0;
 }
