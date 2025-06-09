@@ -11,3 +11,4 @@ void insertBeggining(Node **root, int value);
 void inserAfter(Node *node, int value);
 void insertEnd(Node **root, int value);
 void deallocate(Node **root);
+void inserSorted(Node **root, int value);
