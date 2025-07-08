@@ -59,6 +59,18 @@ void insertSorted(Node **root, int value)
     }
     inserAfter(curr, value);
 }
+
+void removeElement(Node **root, int value)
+{
+    Node *curr;
+    if (*root == NULL) {
+        return;
+    }
+    while (curr -> next != NULL) {
+
+        curr = curr -> next;
+    }
+}
 int main(void)
 {
     system("clear");
