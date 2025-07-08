@@ -97,10 +97,10 @@ int main(void)
     insertSorted(&root, second);
     insertSorted(&root, third);
     insertSorted(&root, fourth);
+    removeElement(&root, first);
     for (Node *curr = root; curr != NULL; curr = curr -> next) {
         printf("%d\n", curr->x);
     }
-
     free(root);
 
     return 0;
