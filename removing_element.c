@@ -67,11 +67,20 @@ void removeElement(Node **root, int value)
     if (*root == NULL) {
         return;
     }
+
+    if ((*root) -> x == value) {
+        to_remove = *root;
+        *root = (*root) -> next;
+        free(to_remove); 
+        return;
+    }
+
     while (curr -> next != NULL) {
         if (curr -> next -> x == value) {
             to_remove = curr -> next;
             curr -> next = curr -> next -> next;
             free(to_remove);
+            return;
         }
         curr = curr -> next;
     }
