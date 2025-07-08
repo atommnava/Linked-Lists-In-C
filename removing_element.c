@@ -62,12 +62,17 @@ void insertSorted(Node **root, int value)
 
 void removeElement(Node **root, int value)
 {
-    Node *curr;
+    Node *curr = *root;
+    Node *to_remove = NULL;
     if (*root == NULL) {
         return;
     }
     while (curr -> next != NULL) {
-
+        if (curr -> next -> x == value) {
+            to_remove = curr -> next;
+            curr -> next = curr -> next -> next;
+            free(to_remove);
+        }
         curr = curr -> next;
     }
 }
@@ -79,7 +84,7 @@ int main(void)
     printf("1st integer: ");
     scanf("%d", &first);
 
-    printf("2snd integer: ");
+    printf("2nd integer: ");
     scanf("%d", &second);
 
     printf("3rd integer: ");
