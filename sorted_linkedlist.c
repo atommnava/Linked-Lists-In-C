@@ -39,7 +39,7 @@ void inserAfter(Node *node, int value)
     node -> next = newNode;
 }
 
-void inserSorted(Node **root, int value)
+void insertSorted(Node **root, int value)
 {
   //if (*root == NULL || (*root) -> x <= value) EQUIVALENT
   //                        2           1
@@ -61,6 +61,7 @@ void inserSorted(Node **root, int value)
 }
 int main(void)
 {
+    system("clear");
     Node *root = NULL;
     int first, second, third, fourth;
     printf("1st integer: ");
@@ -75,10 +76,10 @@ int main(void)
     printf("4th integer: ");
     scanf("%d", &fourth);
 
-    inserSorted(&root, first);
-    inserSorted(&root, second);
-    inserSorted(&root, third);
-    inserSorted(&root, fourth);
+    insertSorted(&root, first);
+    insertSorted(&root, second);
+    insertSorted(&root, third);
+    insertSorted(&root, fourth);
     for (Node *curr = root; curr != NULL; curr = curr -> next) {
         printf("%d\n", curr->x);
     }
