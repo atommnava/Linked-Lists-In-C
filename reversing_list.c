@@ -86,6 +86,14 @@ void removeElement(Node **root, int value)
     }
 }
 
+void reverse(Node **root) {
+    Node *prev = NULL;
+    Node *curr = *root;
+    while (curr != NULL) {
+        Node *next = curr -> next;
+        curr -> next = prev;
+    }
+}
 
 int main(void)
 {
