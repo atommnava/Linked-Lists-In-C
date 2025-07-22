@@ -119,7 +119,7 @@ int main(void)
         printf("%d\n", curr->x);
     }
     */
-    free(root);
+    deallocate(&root);
 
     return 0;
 }
