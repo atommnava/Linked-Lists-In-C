@@ -110,7 +110,8 @@ int main(void)
     insertSorted(&root, fourth);
     removeElement(&root, first);
     Node *curr = root;
-    while(curr -> next != NULL) {
+    while(curr != NULL) {
+        printf("%d\n", curr->x);
         curr = curr -> next;
     }
     /*
