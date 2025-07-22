@@ -14,3 +14,4 @@ void insertEnd(Node **root, int value);
 void deallocate(Node **root);
 void insertSorted(Node **root, int value);
 void removeElement(Node **root, int value);
+void reverse(Node **root);
