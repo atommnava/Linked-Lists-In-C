@@ -39,6 +39,26 @@ void inserAfter(Node *node, int value)
     node -> next = newNode;
 }
 
+void deallocate(Node **root)
+{
+    Node *curr = *root;
+    Node *aux;
+    while (curr != NULL) {
+        aux = curr;
+        curr = curr -> next;
+        free(aux);
+    }
+    /* RECURSIVE MANNER
+    void recursiveDeallocate(Node **node) {
+        if (*node == NULL) return;
+        deallocate(*(&node) -> next);
+        free(*node);
+        *node = NULL;
+    */
+    *root = NULL;
+    printf("DEALLOCATION SUCCESSFULLY..!");
+}
+
 void insertSorted(Node **root, int value)
 {
   //if (*root == NULL || (*root) -> x <= value) EQUIVALENT
@@ -95,6 +115,7 @@ void reverse(Node **root) {
         prev = curr;
         curr = next;
     }
+    *root = prev;
 }
 
 int main(void)
@@ -119,6 +140,7 @@ int main(void)
     insertSorted(&root, third);
     insertSorted(&root, fourth);
     removeElement(&root, first);
+    reverse(&root);
     Node *curr = root;
     while(curr != NULL) {
         printf("%d\n", curr->x);
