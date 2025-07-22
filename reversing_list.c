@@ -92,6 +92,8 @@ void reverse(Node **root) {
     while (curr != NULL) {
         Node *next = curr -> next;
         curr -> next = prev;
+        prev = curr;
+        curr = next;
     }
 }
 
