@@ -20,5 +20,7 @@ int main(void)
     }
     tail -> next -> next -> x = 7;
     tail -> next -> next -> prev = tail;
+    tail -> next -> next -> next = NULL;
+
     return 0;
 }
