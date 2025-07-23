@@ -131,13 +131,14 @@ int has_loops(Node *root)
             return 1;
         }
     }
+    return 0;
 }
 
 int main(void)
 {
     system("clear");
     Node *root = NULL;
-    int first, second, third, fourth;
+    int first, second, third, fourth, fifth;
     printf("1st integer: ");
     scanf("%d", &first);
 
@@ -150,12 +151,21 @@ int main(void)
     printf("4th integer: ");
     scanf("%d", &fourth);
 
+    printf("5th integer: ");
+    scanf("%d", &fifth);
+
     insertSorted(&root, first);
     insertSorted(&root, second);
     insertSorted(&root, third);
     insertSorted(&root, fourth);
-    removeElement(&root, first);
-    reverse(&root);
+    insertSorted(&root, fifth);
+    //removeElement(&root, first);
+    root -> next -> next -> next -> next -> next = root -> next;
+    //reverse(&root);
+    if (has_loops(root) == 1) {
+        printf("Linked List has a LOOP...\n");
+        return 1;
+    }
     Node *curr = root;
     while(curr != NULL) {
         printf("%d\n", curr->x);
