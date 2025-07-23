@@ -134,6 +134,17 @@ int has_loops(Node *root)
     return 0;
 }
 
+int count(Node *root)
+{
+    Node *curr = root;
+    int c = 0;
+    while (curr != NULL) {
+        curr = curr -> next;
+        c++;
+    }
+    return c;
+}
+
 int main(void)
 {
     system("clear");
@@ -171,6 +182,7 @@ int main(void)
         printf("%d\n", curr->x);
         curr = curr -> next;
     }
+    printf("Linked List has %d elements...\n", count(root));
     /*
     for (Node *curr = root; curr != NULL; curr = curr -> next) {
         printf("%d\n", curr->x);
