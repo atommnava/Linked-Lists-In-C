@@ -16,3 +16,5 @@ void insertSorted(Node **root, int value);
 void removeElement(Node **root, int value);
 void reverse(Node **root);
 int has_loops(Node *root);
+int count(Node *root);
+int count_recursive(Node *node);
