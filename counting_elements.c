@@ -145,6 +145,14 @@ int count(Node *root)
     return c;
 }
 
+int count_recursive(Node *node)
+{
+    if (node == NULL) {
+        return 0;
+    }
+    return 1 + count(node -> next);
+}
+
 int main(void)
 {
     system("clear");
