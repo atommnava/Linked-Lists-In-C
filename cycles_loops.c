@@ -118,6 +118,21 @@ void reverse(Node **root) {
     *root = prev;
 }
 
+int has_loops(Node *root)
+{
+    Node *slow = root;
+    Node *fast = root;
+
+
+    while (slow != NULL && fast != NULL && fast -> next != NULL) {
+        slow = slow -> next;
+        fast = fast -> next -> next;
+        if (slow == fast) {
+            return 1;
+        }
+    }
+}
+
 int main(void)
 {
     system("clear");
