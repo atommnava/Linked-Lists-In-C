@@ -150,7 +150,7 @@ int count_recursive(Node *node)
     if (node == NULL) {
         return 0;
     }
-    return 1 + count(node -> next);
+    return 1 + count_recursive(node -> next);
 }
 
 int main(void)
@@ -190,7 +190,8 @@ int main(void)
         printf("%d\n", curr->x);
         curr = curr -> next;
     }
-    printf("Linked List has %d elements...\n", count(root));
+    printf("Linked List has %d elements withouth Recursiveness...\n", count(root));
+    printf("Linked List has %d elements with Recursiveness...\n", count_recursive(root));
     /*
     for (Node *curr = root; curr != NULL; curr = curr -> next) {
         printf("%d\n", curr->x);
