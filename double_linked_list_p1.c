@@ -25,7 +25,7 @@ int main(void)
 
     Node *curr = tail;
     while (curr != NULL) {
-        printf("%d\n", curr -> x);
+        printf("Value: %d\n", curr -> x);
         curr = curr -> next;
     }
     return 0;
