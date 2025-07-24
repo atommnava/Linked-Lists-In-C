@@ -19,7 +19,7 @@ int main(void)
         return 3;
     }
     tail -> next -> next -> x = 7;
-    tail -> next -> next -> prev = tail;
+    tail -> next -> next -> prev = tail -> next;
     tail -> next -> next -> next = NULL;
     Node *head = tail -> next -> next;
 
