@@ -23,5 +23,10 @@ int main(void)
     tail -> next -> next -> next = NULL;
     Node *head = tail -> next -> next;
 
+    Node *curr = tail;
+    while (curr != NULL) {
+        printf("%d\n", curr -> x);
+        curr = curr -> next;
+    }
     return 0;
 }
