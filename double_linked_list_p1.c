@@ -28,5 +28,11 @@ int main(void)
         printf("Value: %d\n", curr -> x);
         curr = curr -> next;
     }
+    /*
+    for (Node *curr = tail; curr != NULL; curr = curr -> next) {
+        printf("Value: %d\n", curr -> x);
+    }
+    */
+    
     return 0;
 }
