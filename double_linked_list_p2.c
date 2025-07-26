@@ -5,6 +5,7 @@ void deallocate(Node **tail, Node **head)
     Node *curr = *tail;
     while (curr -> next != NULL) {
         curr = curr -> next;
+        free(curr -> prev);
     }
 }
 
