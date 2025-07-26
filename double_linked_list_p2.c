@@ -2,11 +2,17 @@
 
 void deallocate(Node **tail, Node **head)
 {
+    if (*tail == NULL) {
+        return;
+    }
     Node *curr = *tail;
     while (curr -> next != NULL) {
         curr = curr -> next;
         free(curr -> prev);
     }
+    free(curr);
+    *tail = NULL;
+    *head = NULL;
 }
 
 int main(void)
@@ -37,11 +43,11 @@ int main(void)
         printf("Value: %d\n", curr -> x);
         curr = curr -> next;
     }
+    deallocate(&tail, &head);
     /*
     for (Node *curr = tail; curr != NULL; curr = curr -> next) {
         printf("Value: %d\n", curr -> x);
     }
     */
-    
     return 0;
 }
