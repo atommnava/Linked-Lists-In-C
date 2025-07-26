@@ -8,13 +8,4 @@ typedef struct Node {
     struct Node* prev;
 } Node;
 
-void insertBeggining(Node **root, int value);
-void inserAfter(Node *node, int value);
-void insertEnd(Node **root, int value);
-void deallocate(Node **root);
-void insertSorted(Node **root, int value);
-void removeElement(Node **root, int value);
-void reverse(Node **root);
-int has_loops(Node *root);
-int count(Node *root);
-int count_recursive(Node *node);
+void deallocate(Node **tail, Node **head);
