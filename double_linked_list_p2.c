@@ -1,5 +1,13 @@
 #include "my-structure-2.h"
 
+void deallocate(Node **tail, Node **head)
+{
+    Node *curr = *tail;
+    while (curr -> next != NULL) {
+        curr = curr -> next;
+    }
+}
+
 int main(void)
 {
     Node *tail = malloc(sizeof(Node));
