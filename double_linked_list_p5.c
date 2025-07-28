@@ -73,7 +73,9 @@ void insert_after(Node *nodo, int value)
     new_node -> x = value;
     new_node -> prev = nodo;
     new_node -> next = nodo -> next;
-    
+    if (nodo -> next != NULL) {
+        nodo -> next -> prev = new_node;
+    }
 }
 int main(void)
 {
