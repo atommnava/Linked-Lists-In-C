@@ -15,6 +15,21 @@ void deallocate(Node **tail, Node **head)
     *head = NULL;
 }
 
+void insert_beggining(Node **tail, int value)
+{
+    Node *new_node = malloc(sizeof(Node));
+    if (new_node != NULL) {
+        new_node -> x = value;
+        new_node -> prev = NULL;
+        new_node -> next = *tail;
+        (*tail) -> prev = new_node;
+        *tail = new_node;
+    } else {
+        exit(1);
+        return;
+    }
+}
+
 int main(void)
 {
     Node *tail = malloc(sizeof(Node));
