@@ -34,17 +34,12 @@ void insert_beggining(Node **tail, int value)
 
 int main(void)
 {
-    Node *tail = malloc(sizeof(Node));
-    if (tail == NULL) {
-        return 1;
-    }
-    tail -> x = 7;
-    tail -> prev = NULL;
-    tail -> next = NULL;
+    Node *tail = NULL;
+    Node *head = tail;
 
+    insert_beggining(&tail, 7);
     insert_beggining(&tail, 3);
-    
-    Node *head = tail -> next -> next;
+    insert_beggining(&tail, 1);  
 
     Node *curr = tail;
     while (curr != NULL) {
