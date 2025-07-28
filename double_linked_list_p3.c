@@ -22,7 +22,9 @@ void insert_beggining(Node **tail, int value)
         new_node -> x = value;
         new_node -> prev = NULL;
         new_node -> next = *tail;
-        (*tail) -> prev = new_node;
+        if (*tail != NULL) {
+            (*tail) -> prev = new_node;
+        }
         *tail = new_node;
     } else {
         exit(1);
@@ -36,21 +38,12 @@ int main(void)
     if (tail == NULL) {
         return 1;
     }
-    tail -> x = 1;
+    tail -> x = 7;
     tail -> prev = NULL;
-    tail -> next = malloc(sizeof(Node));
-    if (tail -> next == NULL) {
-        return 2;
-    }
-    tail -> next -> x = 3;
-    tail -> next -> prev = tail;
-    tail -> next -> next = malloc(sizeof(Node));
-    if (tail -> next -> next == NULL) {
-        return 3;
-    }
-    tail -> next -> next -> x = 7;
-    tail -> next -> next -> prev = tail -> next;
-    tail -> next -> next -> next = NULL;
+    tail -> next = NULL;
+
+    insert_beggining(&tail, 3);
+    
     Node *head = tail -> next -> next;
 
     Node *curr = tail;
