@@ -51,7 +51,7 @@ int main(void)
     Node *tail = NULL;
     Node *head = NULL;
 
-    insert_beggining(&tail, 7);
+    init(&tail, &head, 7);
     insert_beggining(&tail, 3);
     insert_beggining(&tail, 1);  
 
