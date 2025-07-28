@@ -10,3 +10,4 @@ typedef struct Node {
 
 void deallocate(Node **tail, Node **head);
 void insert_beggining(Node **tail, int value);
+void init(Node **tail, Node **head, int value);
