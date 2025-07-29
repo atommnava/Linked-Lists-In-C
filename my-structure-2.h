@@ -13,3 +13,4 @@ void insert_beggining(Node **tail, int value);
 void insert_end(Node **head, int value);
 void init(Node **tail, Node **head, int value);
 void insert_after(Node *nodo, int value);
+void remove_node(Node *node);
