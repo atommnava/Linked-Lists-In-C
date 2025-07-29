@@ -79,6 +79,12 @@ void insert_after(Node *nodo, int value)
     }
     nodo -> next = new_node;
 }
+
+void remove_node(Node *node)
+{
+    node -> prev -> next = node -> next;
+    node -> next -> prev = node -> prev;
+}
 int main(void)
 {
     Node *tail = NULL;
