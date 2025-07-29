@@ -82,8 +82,13 @@ void insert_after(Node *nodo, int value)
 
 void remove_node(Node *node)
 {
-    node -> prev -> next = node -> next;
-    node -> next -> prev = node -> prev;
+    if (node -> prev != NULL) {
+        node -> prev -> next = node -> next;
+    }
+    if (node -> next != NULL) {
+        node -> next -> prev = node -> prev;
+    }
+    free(node);
 }
 int main(void)
 {
@@ -93,7 +98,7 @@ int main(void)
     init(&tail, &head, 7);
     insert_beggining(&tail, 3);
     insert_beggining(&tail, 1); 
-    insert_after(tail -> next, 5); 
+    remove_node(tail -> next);
 
     Node *curr = tail;
     while (curr != NULL) {
