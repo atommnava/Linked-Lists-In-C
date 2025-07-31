@@ -117,8 +117,13 @@ void reverse_doubly_linked_list(Node **tail, Node **head)
     Node *curr = *tail;
     while (curr != NULL) {
         Node *next = curr -> next;
-        
+        curr -> next = curr -> prev;
+        curr -> prev = next;
+        curr = next;
     }
+    Node *aux = *tail;
+    *tail = *head;
+    *head = aux;
 }
 
 int main(void)
