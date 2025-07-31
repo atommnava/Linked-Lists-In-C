@@ -101,6 +101,14 @@ Node *find_node(Node *tail, int value)
     return NULL;
 }
 
+Node *find_node_recursive(Node *node, int value)
+{
+    if (node -> x == value) {
+        return node;
+    }
+    return find_node_recursive(node -> next, value);
+}
+
 int main(void)
 {
     Node *tail = NULL;
@@ -109,7 +117,7 @@ int main(void)
     init(&tail, &head, 7);
     insert_beggining(&tail, 3);
     insert_beggining(&tail, 1);
-    Node *found = find_node(tail, 4);
+    Node *found = find_node_recursive(tail, 1);
     
     if (found == NULL) {
         printf("No Node was found!\n");
