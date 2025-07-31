@@ -93,13 +93,12 @@ void remove_node(Node *node)
 
 Node *find_node(Node *tail, int value)
 {
-    Node *curr = tail;
-    while (curr != NULL) {
-        if (curr -> next == NULL) {
+    for (Node *curr = tail; curr != NULL; curr = curr -> next) {
+        if (curr -> x == value) {
             return curr;
-        }
-        curr = curr -> next;
+        }  
     }
+    return NULL;
 }
 
 int main(void)
@@ -110,13 +109,18 @@ int main(void)
     init(&tail, &head, 7);
     insert_beggining(&tail, 3);
     insert_beggining(&tail, 1);
-    Node *aux = tail -> next; 
-    remove_node(tail);
-    tail = aux;
+    Node *found = find_node(tail, 4);
+    
+    if (found == NULL) {
+        printf("No Node was found!\n");
+    }
+    else  {
+        printf("Value: %d Next: %p\n", found -> x, found -> next);
+    }
 
     Node *curr = tail;
     while (curr != NULL) {
-        printf("Value: %d\n", curr -> x);
+        printf("Node: %d\n", curr -> x);
         curr = curr -> next;
     }
     deallocate(&tail, &head);
