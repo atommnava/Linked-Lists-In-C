@@ -112,6 +112,15 @@ Node *find_node_recursive(Node *node, int value)
     return find_node_recursive(node -> next, value);
 }
 
+void reverse_doubly_linked_list(Node **tail, Node **head)
+{
+    Node *curr = *tail;
+    while (curr != NULL) {
+        Node *next = curr -> next;
+        
+    }
+}
+
 int main(void)
 {
     Node *tail = NULL;
