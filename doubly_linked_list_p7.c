@@ -90,6 +90,18 @@ void remove_node(Node *node)
     }
     free(node);
 }
+
+Node *find_node(Node *tail, int value)
+{
+    Node *curr = tail;
+    while (curr != NULL) {
+        if (curr -> next == NULL) {
+            return curr;
+        }
+        curr = curr -> next;
+    }
+}
+
 int main(void)
 {
     Node *tail = NULL;
