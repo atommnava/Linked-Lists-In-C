@@ -15,3 +15,4 @@ void init(Node **tail, Node **head, int value);
 void insert_after(Node *nodo, int value);
 void remove_node(Node *node);
 Node *find_node(Node *tail, int value);
+Node *find_node_recursive(Node *node, int value);
