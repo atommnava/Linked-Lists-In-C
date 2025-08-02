@@ -18,3 +18,4 @@ int has_loops(Node *root);
 int count(Node *root);
 int count_recursive(Node *node);
 void serialize(Node *root);
+void deserialize(Node **root);
