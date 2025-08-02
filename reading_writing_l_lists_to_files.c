@@ -118,6 +118,14 @@ void reverse(Node **root) {
     *root = prev;
 }
 
+void serialize(Node *root)
+{
+    FILE *fp = fopen("list.txt", "w");
+    if (fp == NULL) {
+        exit(1);
+    }
+}
+
 int main(void)
 {
     system("clear");
