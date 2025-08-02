@@ -124,12 +124,33 @@ void serialize(Node *root)
     if (fp == NULL) {
         exit(1);
     }
+    Node *curr = root;
+    while(curr != NULL) {
+        fprintf(fp, "%d, ", curr -> x);
+        curr = curr -> next;
+    }
+    fclose(fp);
+}
+
+void deserialize(Node **root)
+{
+    FILE *fp = fopen("list.txt", "r");
+    if (fp == NULL) {
+        exit(2);
+    }
+    int val;
+    while (fscanf(fp, "%d, ", &val) > 0) {
+        insertSorted(root, val);
+    }
+    fclose(fp);
 }
 
 int main(void)
 {
     system("clear");
     Node *root = NULL;
+    Node *root1 = NULL;
+    /*
     int first, second, third, fourth;
     printf("1st integer: ");
     scanf("%d", &first);
@@ -142,11 +163,14 @@ int main(void)
 
     printf("4th integer: ");
     scanf("%d", &fourth);
+    */
 
-    insertSorted(&root, first);
-    insertSorted(&root, second);
-    insertSorted(&root, third);
-    insertSorted(&root, fourth);
+    //insertSorted(&root, first);
+    //insertSorted(&root, second);
+    //insertSorted(&root, third);
+    //insertSorted(&root, fourth);
+    //serialize(root);
+    deserialize(&root);
     //reverse(&root);
     Node *curr = root;
     while(curr != NULL) {
@@ -159,6 +183,7 @@ int main(void)
     }
     */
     deallocate(&root);
+    //deallocate(&root1);
 
     return 0;
 }
